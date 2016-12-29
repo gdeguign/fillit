@@ -93,13 +93,3 @@ int	resolve(t_liste *list, int x, int y)
 	free_grid(&grid);
 	return (1);
 }
-
-int main(void)
-{
-	t_liste list;
-	int elem[20] = {2, 6, 7, 7, 4, 7, 10, 1, 14, 3, 7, 16};
-	list.elem = (int *)elem;
-	list.size = 12;
-	resolve(&list, 0, 0);
-	return (0);
-}
