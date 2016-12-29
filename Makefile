@@ -14,7 +14,7 @@ TARGET_EXEC ?= fillit
 
 BUILD_DIR ?= ./build
 SRC_DIRS ?= ./srcs
-INC_DIR ?= ./includes
+INC_DIR ?= ./includes ./libft/includes
 
 SRCS := $(shell find $(SRC_DIRS) -name '*.cpp' -or -name '*.c' -or -name '*.s')
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
@@ -27,11 +27,11 @@ CPPFLAGS ?= $(INC_FLAGS) -MMD -MP -Wall -Werror -Wextra
 
 # Extra flags to give to compilers when they are supposed to invoke the linker, ‘ld’, such as -L.
 # Libraries (-lfoo) should be added to the LDLIBS variable instead.
-LDFLAGS ?= -L. -lft
+LDFLAGS ?= -Llibft -lft
 
 all: $(TARGET_EXEC) $(OBJS)
 
-$(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
+$(TARGET_EXEC): $(OBJS)
 	$(CC) $(OBJS) -o $@ $(LDFLAGS)
 
 # assembly
