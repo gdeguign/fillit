@@ -35,4 +35,11 @@
 #define T3            "###\n.#\0"
 #define T4            ".#\n##\n.#\0"
 
+typedef struct	s_liste
+{
+	int			*elem;
+	int			size;
+	int			capacite;
+}				t_liste;
+
 #endif

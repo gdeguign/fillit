@@ -10,6 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/fillit.h"
 
+int		parser(char *file_name)
+{
+	ft_print("okok");
+}
 
+int 	main(int argc, char **argv)
+{
+	if (argc != 2)
+		return (0);
+	parser(argv[1]);
+	return (0);
+}
