@@ -16,5 +16,6 @@ typedef struct			s_coord
 
 int is_solution(t_grid *grid, t_liste *list, int x, int y);
 void show_grid(t_grid *grid);
+int space2keepgoing(t_grid *grid, t_liste *list);
 
 #endif
