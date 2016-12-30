@@ -55,4 +55,6 @@ t_liste		*parser(char *file_name, t_liste *la_liste);
 void		free_t_liste(t_liste *une_liste);
 void		print_liste_elem(t_liste *une_liste);
 
+int			resolve(t_liste *list);
+
 #endif

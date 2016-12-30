@@ -78,14 +78,14 @@ void show_grid(t_grid *grid)
 	}
 }
 
-int	resolve(t_liste *list, int x, int y)
+int	resolve(t_liste *list)
 {
 	t_grid grid;
 
 	ft_bzero(&grid, sizeof(t_grid));
 	if (!init_grid(&grid, list->size))
 		return (0);
-	while (!is_solution(&grid, list, x, y))
+	while (!is_solution(&grid, list, 0, 0))
 	{
 		++grid.size;
 		if (!check_capa(&grid))
@@ -95,14 +95,3 @@ int	resolve(t_liste *list, int x, int y)
 	free_grid(&grid);
 	return (1);
 }
-
-// int main(void)
-// {
-// 	t_liste list;
-// 	// int elem[20] = {2, 6, 7, 7, 4, 7, 10, 1, 14, 3, 7, 16};
-// 	int elem[20] = {16,16,16,16,16,16,17,17,17,17,17,17,18,18,18,18,18,18};
-// 	list.elem = (int *)elem;
-// 	list.size = 18;
-// 	resolve(&list, 0, 0);
-// 	return (0);
-// }

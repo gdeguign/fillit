@@ -31,6 +31,7 @@ int 	main(int argc, char **argv)
 		return (0);
 	}
 	print_liste_elem(une_liste);
+	resolve(une_liste);
 	free_t_liste(une_liste);
 	//sleep(2);
 
