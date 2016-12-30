@@ -176,6 +176,7 @@ int		get_tetriminos_type(t_liste *une_liste, char *tab)
 	else
 		une_liste->error = 1;
 	printf("++++++++++++++++++la valeur du long est de [%ld]++++++++++\n", une_union.mylong);
+	i = 0;
 	while (une_liste->tab_type[i])
 	{
 		// ft_print("[%s]-------\n", une_liste->tab_type[i]);
