@@ -29,10 +29,13 @@ CPPFLAGS ?= $(INC_FLAGS) -MMD -MP -Wall -Werror -Wextra
 # Libraries (-lfoo) should be added to the LDLIBS variable instead.
 LDFLAGS ?= -Llibft -lft
 
-all: $(TARGET_EXEC) $(OBJS)
+all: libft/libft.a $(TARGET_EXEC) $(OBJS)
+
+libft/libft.a:
+	make -C libft
 
 $(TARGET_EXEC): $(OBJS)
-	$(CC) $(OBJS) -o $@ $(LDFLAGS)
+	$(CC) $(OBJS) -o $@ $(LDFLAGS) -O
 
 # assembly
 $(BUILD_DIR)/%.s.o: %.s
@@ -53,9 +56,11 @@ $(BUILD_DIR)/%.cpp.o: %.cpp
 .PHONY: clean fclean re
 
 clean:
+	make clean -C libft
 	$(RM) -r $(BUILD_DIR)
 
 fclean: clean
+	make fclean -C libft	
 	$(RM) $(TARGET_EXEC)
 
 re: fclean
