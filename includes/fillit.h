@@ -54,6 +54,10 @@ typedef union
 t_liste		*parser(char *file_name, t_liste *la_liste);
 void		free_t_liste(t_liste *une_liste);
 void		print_liste_elem(t_liste *une_liste);
+t_liste		*ft_init(t_liste *la_liste, int *fd, char *file_name);
+int		*realloc_tetriminos_tab(t_liste *une_liste);
+void	fill_next(foo *une_union, char move, int level);
+void	add_to_liste(t_liste *une_liste, int type);
 
 int			resolve(t_liste *list);
 
