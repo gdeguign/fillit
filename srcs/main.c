@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-int 	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	t_liste	*une_liste;
 
@@ -27,13 +27,10 @@ int 	main(int argc, char **argv)
 	if (une_liste->error)
 	{
 		free_t_liste(une_liste);
-		ft_print("une erreur de parsing a ete trouvee\n");
+		ft_print("error\n");
 		return (0);
 	}
-	print_liste_elem(une_liste);
 	resolve(une_liste);
 	free_t_liste(une_liste);
-	//sleep(2);
-
 	return (0);
 }

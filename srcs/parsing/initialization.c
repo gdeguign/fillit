@@ -58,7 +58,7 @@ t_liste		*ft_init(t_liste *la_liste, int *fd, char *file_name)
 	return (la_liste);
 }
 
-void	free_t_liste(t_liste *une_liste)
+void		free_t_liste(t_liste *une_liste)
 {
 	if (une_liste == NULL)
 		return ;
