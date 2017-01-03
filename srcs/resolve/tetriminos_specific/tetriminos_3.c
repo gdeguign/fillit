@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tetriminos_3.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ulefebvr <ulefebvr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/03 14:23:18 by ulefebvr          #+#    #+#             */
+/*   Updated: 2017/01/03 14:24:51 by ulefebvr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 #include "fillit_resolve.h"
 
-int remove_tetriminos_3(t_grid *grid, int x, int y)
+int	remove_tetriminos_3(t_grid *grid, int x, int y)
 {
 	grid->grid[y][x] = '.';
 	grid->grid[y][x + 1] = '.';
@@ -10,7 +22,7 @@ int remove_tetriminos_3(t_grid *grid, int x, int y)
 	return (1);
 }
 
-int add_tetriminos_3(t_grid *grid, int i, int x, int y)
+int	add_tetriminos_3(t_grid *grid, int i, int x, int y)
 {
 	char letter;
 

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   resolve.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ulefebvr <ulefebvr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/03 14:23:57 by ulefebvr          #+#    #+#             */
+/*   Updated: 2017/01/03 14:39:36 by ulefebvr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "fillit.h"
 #include "fillit_resolve.h"
 
-void free_grid(t_grid *grid)
+void	free_grid(t_grid *grid)
 {
 	int i;
 
@@ -16,7 +28,7 @@ void free_grid(t_grid *grid)
 	grid->grid = 0;
 }
 
-int init_grid(t_grid *grid, int size)
+int		init_grid(t_grid *grid, int size)
 {
 	int i;
 
@@ -43,10 +55,10 @@ int init_grid(t_grid *grid, int size)
 	return (1);
 }
 
-int check_capa(t_grid *grid)
+int		check_capa(t_grid *grid)
 {
-	int i;
-	char **map;
+	int		i;
+	char	**map;
 
 	i = 0;
 	if (grid->size > grid->capacity)
@@ -66,7 +78,7 @@ int check_capa(t_grid *grid)
 	return (1);
 }
 
-void show_grid(t_grid *grid)
+void	show_grid(t_grid *grid)
 {
 	int i;
 
@@ -78,14 +90,14 @@ void show_grid(t_grid *grid)
 	}
 }
 
-int	resolve(t_liste *list)
+int		resolve(t_liste *list)
 {
 	t_grid grid;
 
 	ft_bzero(&grid, sizeof(t_grid));
 	if (!init_grid(&grid, list->size))
 		return (0);
-	while (!is_solution(&grid, list, 0, 0))
+	while (!is_solution(&grid, list))
 	{
 		++grid.size;
 		if (!check_capa(&grid))
