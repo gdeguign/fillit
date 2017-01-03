@@ -6,7 +6,7 @@
 /*   By: ulefebvr <ulefebvr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/03 14:23:09 by ulefebvr          #+#    #+#             */
-/*   Updated: 2017/01/03 14:24:32 by ulefebvr         ###   ########.fr       */
+/*   Updated: 2017/01/03 14:44:38 by ulefebvr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	add_tetriminos_0(t_grid *grid, int i, int x, int y)
 		{
 			if (grid->grid[y + 1][x] == '.'
 				&& grid->grid[y][x + 1] == '.'
-				&& grid->grid[y +1][x + 1] == '.')
+				&& grid->grid[y + 1][x + 1] == '.')
 			{
 				grid->grid[y][x] = letter;
 				grid->grid[y + 1][x + 1] = letter;

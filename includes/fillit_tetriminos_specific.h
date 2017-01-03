@@ -1,4 +1,19 @@
-#include "fillit_resolve.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fillit_tetriminos_specific.h                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ulefebvr <ulefebvr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/01/03 14:46:44 by ulefebvr          #+#    #+#             */
+/*   Updated: 2017/01/03 14:47:38 by ulefebvr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FILLIT_TETRIMINOS_SPECIFIC_H
+# define FILLIT_TETRIMINOS_SPECIFIC_H
+
+# include "fillit_resolve.h"
 
 int add_tetriminos_0(t_grid *grid, int i, int x, int y);
 int add_tetriminos_1(t_grid *grid, int i, int x, int y);
@@ -20,7 +35,7 @@ int add_tetriminos_16(t_grid *grid, int i, int x, int y);
 int add_tetriminos_17(t_grid *grid, int i, int x, int y);
 int add_tetriminos_18(t_grid *grid, int i, int x, int y);
 
-int (*g_add_tetriminos[])(t_grid *grid, int i, int x, int y)={
+int (*g_add_tetriminos[])(t_grid *grid, int i, int x, int y) = {
 	&add_tetriminos_0,
 	&add_tetriminos_1,
 	&add_tetriminos_2,
@@ -42,7 +57,6 @@ int (*g_add_tetriminos[])(t_grid *grid, int i, int x, int y)={
 	&add_tetriminos_18
 };
 
-
 int remove_tetriminos_0(t_grid *grid, int x, int y);
 int remove_tetriminos_1(t_grid *grid, int x, int y);
 int remove_tetriminos_2(t_grid *grid, int x, int y);
@@ -63,7 +77,7 @@ int remove_tetriminos_16(t_grid *grid, int x, int y);
 int remove_tetriminos_17(t_grid *grid, int x, int y);
 int remove_tetriminos_18(t_grid *grid, int x, int y);
 
-int (*g_remove_tetriminos[])(t_grid *grid, int x, int y)=
+int (*g_remove_tetriminos[])(t_grid *grid, int x, int y) =
 {
 	&remove_tetriminos_0,
 	&remove_tetriminos_1,
@@ -85,3 +99,5 @@ int (*g_remove_tetriminos[])(t_grid *grid, int x, int y)=
 	&remove_tetriminos_17,
 	&remove_tetriminos_18
 };
+
+#endif

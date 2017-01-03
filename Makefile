@@ -6,7 +6,7 @@
 #    By: ulefebvr <ulefebvr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/26 18:52:01 by ulefebvr          #+#    #+#              #
-#    Updated: 2016/12/26 18:52:05 by ulefebvr         ###   ########.fr        #
+#    Updated: 2017/01/03 14:49:01 by ulefebvr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ libft/libft.a:
 	make -C libft
 
 $(TARGET_EXEC): $(OBJS)
-	$(CC) $(OBJS) -o $@ $(LDFLAGS) -O
+	$(CC) $(OBJS) -o $@ $(LDFLAGS)
 
 # assembly
 $(BUILD_DIR)/%.s.o: %.s
@@ -60,7 +60,7 @@ clean:
 	$(RM) -r $(BUILD_DIR)
 
 fclean: clean
-	make fclean -C libft	
+	make fclean -C libft
 	$(RM) $(TARGET_EXEC)
 
 re: fclean
