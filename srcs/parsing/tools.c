@@ -17,7 +17,7 @@ void	add_to_liste(t_liste *une_liste, int type)
 	int		i;
 
 	i = 0;
-	while (une_liste->elem[i])
+	while (une_liste->elem[i] != -1)
 		i++;
 	une_liste->elem[i] = type;
 	une_liste->size++;
@@ -54,7 +54,7 @@ int		*realloc_tetriminos_tab(t_liste *une_liste)
 	if ((new_tab = (int*)malloc(sizeof(int) * une_liste->capacite * 2)) == NULL)
 		return (NULL);
 	une_liste->capacite = une_liste->capacite * 2;
-	ft_bzero(une_liste->elem, sizeof(int) * une_liste->capacite);
+	init_tab_int(une_liste->elem, une_liste->capacite);
 	ft_memcpy(new_tab, une_liste->elem, sizeof(int) * une_liste->capacite);
 	free(une_liste->elem);
 	une_liste->elem = NULL;

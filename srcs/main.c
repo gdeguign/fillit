@@ -24,7 +24,7 @@ int		main(int argc, char **argv)
 	}
 	if ((une_liste = parser(argv[1], une_liste)) == NULL)
 		return (0);
-	if (une_liste->error)
+	if (une_liste->error || une_liste->size == 0)
 	{
 		free_t_liste(une_liste);
 		ft_print("error\n");
