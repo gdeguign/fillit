@@ -58,6 +58,7 @@ int					*realloc_tetriminos_tab(t_liste *une_liste);
 void				fill_next(t_foo *une_union, char move, int level);
 void				add_to_liste(t_liste *une_liste, int type);
 void				check_if_resize(t_liste *une_liste);
+void				init_tab_int(int *tab_int, int size);
 
 int					resolve(t_liste *list);
 

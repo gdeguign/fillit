@@ -36,6 +36,18 @@ void		init_tetriminos_tab(t_liste *la_liste)
 	la_liste->tab_type[18] = T4;
 }
 
+void		init_tab_int(int *tab_int, int size)
+{
+	int		i;
+
+	i = 0;
+	while (i < size)
+	{
+		tab_int[i] = -1;
+		i++;
+	}
+}
+
 t_liste		*ft_init(t_liste *la_liste, int *fd, char *file_name)
 {
 	if ((la_liste = (t_liste*)malloc(sizeof(t_liste))) == NULL)
@@ -49,7 +61,7 @@ t_liste		*ft_init(t_liste *la_liste, int *fd, char *file_name)
 		return (NULL);
 	}
 	init_tetriminos_tab(la_liste);
-	ft_bzero(la_liste->elem, sizeof(int) * 40);
+	init_tab_int(la_liste->elem, la_liste->capacite);
 	if ((*fd = open(file_name, O_RDONLY)) == -1)
 	{
 		free_t_liste(la_liste);
