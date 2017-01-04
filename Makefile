@@ -16,11 +16,36 @@ BUILD_DIR ?= ./build
 SRC_DIRS ?= ./srcs
 INC_DIR ?= ./includes ./libft/includes
 
-SRCS := $(shell find $(SRC_DIRS) -name '*.cpp' -or -name '*.c' -or -name '*.s')
+SRCS := srcs/main.c \
+		srcs/parsing/initialization.c \
+		srcs/parsing/parsing.c \
+		srcs/parsing/tools.c \
+		srcs/resolve/find_solution.c \
+		srcs/resolve/resolve.c \
+		srcs/resolve/space2keepgoing.c \
+		srcs/resolve/tetriminos_specific/tetriminos_0.c \
+		srcs/resolve/tetriminos_specific/tetriminos_1.c \
+		srcs/resolve/tetriminos_specific/tetriminos_10.c \
+		srcs/resolve/tetriminos_specific/tetriminos_11.c \
+		srcs/resolve/tetriminos_specific/tetriminos_12.c \
+		srcs/resolve/tetriminos_specific/tetriminos_13.c \
+		srcs/resolve/tetriminos_specific/tetriminos_14.c \
+		srcs/resolve/tetriminos_specific/tetriminos_15.c \
+		srcs/resolve/tetriminos_specific/tetriminos_16.c \
+		srcs/resolve/tetriminos_specific/tetriminos_17.c \
+		srcs/resolve/tetriminos_specific/tetriminos_18.c \
+		srcs/resolve/tetriminos_specific/tetriminos_2.c \
+		srcs/resolve/tetriminos_specific/tetriminos_3.c \
+		srcs/resolve/tetriminos_specific/tetriminos_4.c \
+		srcs/resolve/tetriminos_specific/tetriminos_5.c \
+		srcs/resolve/tetriminos_specific/tetriminos_6.c \
+		srcs/resolve/tetriminos_specific/tetriminos_7.c \
+		srcs/resolve/tetriminos_specific/tetriminos_8.c \
+		srcs/resolve/tetriminos_specific/tetriminos_9.c
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 DEPS := $(OBJS:.o=.d)
 
-INC_DIRS := $(shell find $(INC_DIR) -type d)
+INC_DIRS := $(INC_DIR)
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 CPPFLAGS ?= $(INC_FLAGS) -MMD -MP -Wall -Werror -Wextra
