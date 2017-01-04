@@ -39,18 +39,14 @@ int	remove_tetriminos(t_grid *grid, t_liste *list, int i, t_coord *c)
 	return (0);
 }
 
-int	try(t_grid *grid, t_liste *list, int i)
+int	try(t_grid *grid, t_liste *list, int i, t_coord *co)
 {
-	int x;
-	int y;
 	int save;
 
-	x = 0;
-	y = 0;
 	save = 0;
-	while (y < grid->size)
+	while (*co->y < grid->size)
 	{
-		if (add_tetriminos(grid, list, i, &(t_coord){&x, &y}))
+		if (add_tetriminos(grid, list, i, co))
 		{
 			save = list->elem[i];
 			list->elem[i] = 99;
@@ -59,11 +55,11 @@ int	try(t_grid *grid, t_liste *list, int i)
 			else
 			{
 				list->elem[i] = save;
-				remove_tetriminos(grid, list, i, &(t_coord){&x, &y});
+				remove_tetriminos(grid, list, i, co);
 			}
 		}
-		y += x < grid->size - 1 ? 0 : 1;
-		x += x < grid->size - 1 ? 1 : -x;
+		*co->y += *co->x < grid->size - 1 ? 0 : 1;
+		*co->x += *co->x < grid->size - 1 ? 1 : -*co->x;
 	}
 	return (0);
 }
@@ -72,14 +68,18 @@ int	is_solution(t_grid *grid, t_liste *list)
 {
 	int i;
 	int size;
+	int x;
+	int y;
 
 	i = 0;
+	x = 0;
+	y = 0;
 	size = 0;
 	while (i < list->size)
 	{
 		if (list->elem[i] == 99)
 			size++;
-		else if (try(grid, list, i))
+		else if (try(grid, list, i, &(t_coord){&x, &y}))
 			return (1);
 		++i;
 	}
